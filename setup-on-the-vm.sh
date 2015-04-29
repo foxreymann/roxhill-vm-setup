@@ -1,2 +1,1 @@
-cp /vagrant/.bash_profile /etc/bash.bashrc
-echo 'alias r="cd /home/roxhill/roxhill-app"'   >> /etc/bash.bashrc
+ln -s /vagrant/roxhill-vm-setup/bash.bashrc /etc/

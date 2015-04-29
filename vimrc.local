@@ -33,21 +33,13 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 nmap \q :nohlsearch<CR>
 
-" autocmd vimenter * if !argc() | NERDTree | endif
-
 set magic
 imap ` <ESC>
-execute pathogen#infect()
 set wildmode=full
 set wildmenu
 set path=**
 
-inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
-noremap <Leader>u :call PhpInsertUse()<CR>
 nnoremap K i<CR><Esc>
-
-let g:pdv_template_dir = "/Users/tomasz/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
 
 nnoremap ; :
 

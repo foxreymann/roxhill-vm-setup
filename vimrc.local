@@ -1,0 +1,80 @@
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set splitright
+set splitbelow
+set number
+set nocompatible
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+syntax on
+set bs=2
+set paste
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+let mysyntaxfile = "$VIM/jade.vim"
+filetype on
+filetype plugin on
+au BufNewFile,BufRead *.spv set filetype=html
+au BufNewFile,BufRead *.twig set filetype=html
+au BufNewFile,BufRead *.hbs set filetype=html
+au BufNewFile,BufRead *.hbs set filetype=html
+au BufNewFile,BufRead *.md set filetype=conf
+au BufNewFile,BufRead *.html set filetype=jst
+"" au FileType html setl sw=4 sts=4 et
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+nmap \q :nohlsearch<CR>
+
+" autocmd vimenter * if !argc() | NERDTree | endif
+
+set magic
+imap ` <ESC>
+execute pathogen#infect()
+set wildmode=full
+set wildmenu
+set path=**
+
+inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>u :call PhpInsertUse()<CR>
+nnoremap K i<CR><Esc>
+
+let g:pdv_template_dir = "/Users/tomasz/.vim/bundle/pdv/templates_snip"
+nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+
+nnoremap ; :
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+nnoremap j gj
+nnoremap k gk
+
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+:command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+:command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
+:command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
+
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
+
+" highlight trailing spaces in annoying red
+highlight ExtraWhitespace ctermbg=1 guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()

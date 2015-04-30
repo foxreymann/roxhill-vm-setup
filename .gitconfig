@@ -1,0 +1,12 @@
+[user]
+	name = tomaszjureczko
+	email = tomasz.jureczko@gmail.com
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore
+	safecrlf = true
+[http]
+[https]
+[push]
+	default = simple

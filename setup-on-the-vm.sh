@@ -6,5 +6,8 @@ cp -r /vagrant/roxhill-vm-setup/.ssh /home/roxhill/
 apt-get install git/wheezy-backports
 apt-get -t wheezy-backports install git
 apt-get install ruby
-curl https://hub.github.com/standalone -Lo /usr/bin/hub
-chmod 755 ~/bin/hub
+wget https://github.com/github/hub/releases/download/v2.2.1/hub-linux-amd64-2.2.1.tar.gz
+tar zxvf hub-linux-amd64-2.2.1.tar.gz
+cp hub-linux-amd64-2.2.1/hub /usr/bin/
+chmod 755 /usr/bin/hub
+rm -r hub-linux-amd64-2.2.1*

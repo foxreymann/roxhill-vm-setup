@@ -13,3 +13,4 @@ chmod 755 /usr/bin/hub
 rm -r hub-linux-amd64-2.2.1*
 ln -s /vagrant/roxhill-vm-setup/.git* /home/roxhill
 ln -s /vagrant/roxhill-vm-setup/.vim /home/roxhill/
+ln -s /vagrant/roxhill-vm-setup/git-completion.bash /home/roxhill/

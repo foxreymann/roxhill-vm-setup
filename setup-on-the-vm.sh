@@ -11,3 +11,4 @@ tar zxvf hub-linux-amd64-2.2.1.tar.gz
 cp hub-linux-amd64-2.2.1/hub /usr/bin/
 chmod 755 /usr/bin/hub
 rm -r hub-linux-amd64-2.2.1*
+ln -s /vagrant/roxhill-vm-setup/.git* /home/roxhill

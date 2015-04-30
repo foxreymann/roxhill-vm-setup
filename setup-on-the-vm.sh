@@ -1,3 +1,4 @@
+#!/bin/bash
 rm -rf /etc/bash.bashrc
 ln -s /vagrant/roxhill-vm-setup/bash.bashrc /etc/
 rm -rf /etc/vim/vimrc.local

@@ -25,6 +25,7 @@ au BufNewFile,BufRead *.hbs set filetype=html
 au BufNewFile,BufRead *.hbs set filetype=html
 au BufNewFile,BufRead *.md set filetype=conf
 au BufNewFile,BufRead *.html set filetype=jst
+au BufNewFile,BufRead *.less set filetype=less
 "" au FileType html setl sw=4 sts=4 et
 "" Searching
 set hlsearch                    " highlight matches

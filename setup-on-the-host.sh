@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -r ~/.ssh ~/code/everlution/roxhill/roxhill-vm-setup/
+cp -r ~/Dropbox/dot-files/.ssh ~/code/everlution/roxhill/roxhill-vm-setup/
